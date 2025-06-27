@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account / 회원탈퇴 안내</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 640px;
+            padding: 24px 12px;
+            text-align: center;
+        }
+
+        .content {
+            text-align: left;
+            margin-top: 32px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 900;
+            margin: 6px 0;
+        }
+
+        .notice {
+            color: grey;
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .list {
+            margin: 16px 0;
+            padding-left: 16px;
+        }
+
+        .button {
+            margin-top: 32px;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .lang-section {
+            display: none;
+        }
+
+        .lang-ko.active,
+        .lang-en.active {
+            display: block;
+        }
+
+        img.logo {
+            width: 25%;
+            max-width: 150px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lang = navigator.language || navigator.userLanguage;
+            const isKo = lang.startsWith("ko");
+            document.querySelector(".lang-ko").classList.toggle("active", isKo);
+            document.querySelector(".lang-en").classList.toggle("active", !isKo);
+        });
+        function closeWindow() {
+            window.close();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <img class="logo" src="assets/images/logo.svg" alt="Routravel Logo" />
+
+        <div class="lang-section lang-ko">
+            <div class="content">
+                <h2>루트래블을 탈퇴를 하게 되면</h2>
+                <h2>작성한 모든 데이터가 지체없이 삭제 되고</h2>
+                <h2>다시는 복구할 수 없어요.</h2>
+                <p class="notice">내정보 - 우측상단 설정 화면에서 회원탈퇴를 할 수 있습니다</p>
+                <ul class="list">
+                    <li>- 사용자 계정 정보</li>
+                    <li>- 여행일정(메모, 사진 포함)</li>
+                    <li>- 장소 리뷰</li>
+                </ul>
+            </div>
+            <button class="button" onclick="closeWindow()">네, 알겠습니다</button>
+        </div>
+
+        <div class="lang-section lang-en">
+            <div class="content">
+                <h2>When you cancel your membership of Routravel</h2>
+                <h2>All data written will be deleted without delay</h2>
+                <h2>It cannot be recovered again.</h2>
+                <p class="notice">You can withdraw your membership by accessing the 'My Account' section and selecting
+                    the 'Settings' option in the top right corner.</p>
+                <ul class="list">
+                    <li>- User information</li>
+                    <li>- Travel itinerary</li>
+                    <li>- Reviews of place</li>
+                </ul>
+            </div>
+            <button class="button" onclick="closeWindow()">Yes, I got it.</button>
+        </div>
+    </div>
+</body>
+
+</html>
